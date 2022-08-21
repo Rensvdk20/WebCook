@@ -5,6 +5,8 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
+import { GiChefToque } from "react-icons/gi";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/style.scss";
 
@@ -17,7 +19,10 @@ export default function WebCook({ Component, pageProps }) {
 			<Navbar bg="light" expand="lg">
 				<Container>
 					<Link href="/" passHref>
-						<Navbar.Brand>WebCook</Navbar.Brand>
+						<Navbar.Brand>
+							<GiChefToque className="logo" />
+							<span>WebCook</span>
+						</Navbar.Brand>
 					</Link>
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
 					<Navbar.Collapse id="basic-navbar-nav">

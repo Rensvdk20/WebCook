@@ -1,13 +1,11 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
-import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
-import "../styles/globals.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/style.scss";
 
 export default function WebCook({ Component, pageProps }) {

@@ -5,12 +5,11 @@ export default function Home() {
 	return (
 		<>
 			<Head>
-				<title>WebCook</title>
+				<title>WebCook | Homepage</title>
 				<meta
 					name="description"
 					content="WebCook is a web application that allows you to create and share recipes."
 				/>
-				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<header></header>
 			<div>

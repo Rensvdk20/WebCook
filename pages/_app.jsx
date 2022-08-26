@@ -60,8 +60,8 @@ export default function WebCook({ Component, pageProps }) {
 							<Link href="/recipes" passHref>
 								<Nav.Link>Recipes</Nav.Link>
 							</Link>
-							<Link href="/test" passHref>
-								<Nav.Link>Test</Nav.Link>
+							<Link href="/manager" passHref>
+								<Nav.Link>Recipe Manager</Nav.Link>
 							</Link>
 						</Nav>
 					</Navbar.Collapse>

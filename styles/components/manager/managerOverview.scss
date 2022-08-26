@@ -1,0 +1,16 @@
+.manager-overview {
+    &-block {
+        padding: 20px;
+        background-color: #eee;
+        box-shadow: 0 0 5px rgb(0 0 0 / 10%);
+        border-radius: 10px;
+
+        *:nth-child(1) {
+            margin-bottom: 5px;
+        }
+
+        *:nth-child(2) {
+            font-size: 1.5em;
+        }
+    }
+}

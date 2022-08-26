@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import RecipeList from "../../components/recipeList";
+import RecipeList from "../../components/recipes/recipeList";
 
 export async function getServerSideProps() {
 	try {
@@ -24,9 +24,11 @@ export default function Recipes({ allRecipes }) {
 			<Head>
 				<title>WebCook | Recipes</title>
 			</Head>
-			<div className="container">
-				<h1>Recipes</h1>
-				<RecipeList allRecipes={allRecipes} />
+			<div className="recipe-page">
+				<div className="container">
+					<h1>Recipes</h1>
+					<RecipeList allRecipes={allRecipes} />
+				</div>
 			</div>
 		</>
 	);

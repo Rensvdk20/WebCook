@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import RecipeSingle from "../../components/recipeSingle";
+import RecipeSingle from "../../components/recipes/recipeSingle";
 
 export default function recipe({ recipeData }) {
 	const title = `WebCook | ${recipeData.result.name}`;

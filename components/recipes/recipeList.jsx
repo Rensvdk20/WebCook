@@ -44,7 +44,6 @@ export default function RecipeList({ allRecipes }) {
 				</div>
 			));
 		} else {
-			console.log(allRecipes.error);
 			return <div>No recipes found</div>;
 		}
 	};

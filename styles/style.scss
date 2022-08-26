@@ -15,8 +15,26 @@ a {
     box-sizing: border-box;
 }
 
+// ##### Default #####
 @import "default/nav";
 
-//Styles
-@import "components/[id]";
-@import "components/recipeList";
+
+
+// ##### Pages #####
+
+// Recipes
+@import "pages/recipes/index";
+@import "pages/recipes/[id]";
+
+//Manager
+@import "pages/manager/index";
+
+
+
+// ##### Components #####
+
+//Recipes
+@import "components/recipes/recipeList";
+
+//Manager
+@import "components/manager/managerOverview";

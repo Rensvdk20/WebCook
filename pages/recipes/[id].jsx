@@ -1,7 +1,20 @@
-export default function recipe({ recipeData }) {
-	const recipe = recipeData.result;
+import Head from "next/head";
 
-	return <h1>{recipe.name}</h1>;
+import RecipeSingle from "../../components/recipeSingle";
+
+export default function recipe({ recipeData }) {
+	const title = `WebCook | ${recipeData.result.name}`;
+
+	return (
+		<>
+			<Head>
+				<title>{title}</title>
+			</Head>
+			<div className="container">
+				<RecipeSingle recipeData={recipeData} />
+			</div>
+		</>
+	);
 }
 
 export async function getStaticPaths() {

@@ -1,0 +1,40 @@
+.recipe-single {
+    .recipe {
+        padding-top: 40px;
+    
+        &-block {
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgb(0 0 0 / 20%);
+            margin-bottom: 40px;
+
+            &-top {
+                > div:first-child {
+                    padding-left: 0;
+                }
+            }
+
+            &-mid {
+                padding: 20px;
+
+                p {
+                    white-space: break-spaces;
+                }
+            }
+        }
+
+        &-image {
+            img {
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
+        }
+
+        &-info {
+            padding: 20px 0 0 0;
+
+            .userIcon {
+                padding-bottom: 2px;
+            }
+        }
+    }
+}

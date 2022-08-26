@@ -11,23 +11,7 @@ const pool = mysql.createPool({
 export default async function handler(req, res) {
 	//Get request
 	if (req.method == "GET") {
-		if (!req.query.id) {
-			//Get all recipes
-			try {
-				const [rows] = await pool.execute("SELECT * FROM recipes");
-
-				if (rows.length > 0) {
-					res.status(200).json({ status: 200, results: rows });
-				} else {
-					res.status(404).json({
-						status: 404,
-						message: "No recipes found",
-					});
-				}
-			} catch (connErr) {
-				res.status(500).json({ error: connErr.message });
-			}
-		} else {
+		if (req.query.id) {
 			//Get recipe by id
 			try {
 				const [rows] = await pool.execute(
@@ -41,6 +25,22 @@ export default async function handler(req, res) {
 					res.status(404).json({
 						status: 404,
 						message: "Recipe not found",
+					});
+				}
+			} catch (connErr) {
+				res.status(500).json({ error: connErr.message });
+			}
+		} else {
+			//Get all recipes
+			try {
+				const [rows] = await pool.execute("SELECT * FROM recipes");
+
+				if (rows.length > 0) {
+					res.status(200).json({ status: 200, results: rows });
+				} else {
+					res.status(404).json({
+						status: 404,
+						message: "No recipes found",
 					});
 				}
 			} catch (connErr) {

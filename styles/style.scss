@@ -1,4 +1,4 @@
-//Default
+// ##### Default #####
 html,
 body {
     padding: 0;
@@ -38,3 +38,4 @@ a {
 
 //Manager
 @import "components/manager/managerOverview";
+@import "components/manager/managerRecipeList";

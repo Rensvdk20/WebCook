@@ -1,0 +1,20 @@
+.manager-recipe-list {
+    .row > div {
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+    .recipe {
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 5px rgb(0 0 0 / 10%);
+
+        &-image {
+            width: 75px;
+            
+            img {
+                border-radius: 50px;
+            }
+        }
+    }
+}

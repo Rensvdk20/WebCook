@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
 
 export default function ManagerRecipeList({ allRecipes }) {
 	const recipes = allRecipes.results;
@@ -21,6 +22,13 @@ export default function ManagerRecipeList({ allRecipes }) {
 								objectFit="cover"
 							/>
 						</div>
+						<span>{recipe.name}</span>
+						<span className="recipe-edit">
+							<AiOutlineEdit size={25} />
+						</span>
+						<span className="recipe-delete">
+							<AiOutlineDelete size={25} />
+						</span>
 					</div>
 				</div>
 			));

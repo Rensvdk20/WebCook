@@ -5,16 +5,33 @@
     }
 
     .recipe {
+        display: flex;
+        flex-direction: row;
         padding: 10px;
         border-radius: 10px;
         box-shadow: 0 0 5px rgb(0 0 0 / 10%);
 
+        > div, span {
+            padding: 0 10px;
+        }
+
         &-image {
+            padding: 0 !important;
             width: 75px;
             
             img {
                 border-radius: 50px;
             }
+        }
+
+        &-edit, &-delete {
+            cursor: pointer;
+            align-self: center;
+            margin-left: auto;
+        }
+
+        &-delete {
+            margin-left: 0;
         }
     }
 }

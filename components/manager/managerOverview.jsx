@@ -1,5 +1,5 @@
 export default function ManagerOverview({ allRecipes }) {
-	const recipes = allRecipes.results;
+	const recipes = allRecipes;
 
 	const getRecipesByLastMonths = (months) => {
 		return recipes.filter(
@@ -15,7 +15,7 @@ export default function ManagerOverview({ allRecipes }) {
 				<div className="col-lg-3">
 					<div className="manager-overview-block">
 						<p>Total recipes</p>
-						<span>{allRecipes.results.length}</span>
+						<span>{allRecipes.length}</span>
 					</div>
 				</div>
 				<div className="col-lg-3">

@@ -4,8 +4,8 @@ import { BsFillPersonFill } from "react-icons/bs";
 
 export default function RecipeList({ allRecipes }) {
 	const showRecipes = () => {
-		if (!allRecipes.error) {
-			return allRecipes.results.map((recipe) => (
+		if (allRecipes.length > 0) {
+			return allRecipes.map((recipe) => (
 				<div className="col-lg-4 col-sm-6 col-xs-12" key={recipe.id}>
 					<Link href={`/recipes/${recipe.id}`}>
 						<div className="recipe">

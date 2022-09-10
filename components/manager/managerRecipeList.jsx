@@ -2,10 +2,10 @@ import Image from "next/image";
 import { AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
 
 export default function ManagerRecipeList({ allRecipes }) {
-	const recipes = allRecipes.results;
+	const recipes = allRecipes;
 
 	const showRecipes = () => {
-		if (!allRecipes.error) {
+		if (allRecipes.length > 0) {
 			return recipes.map((recipe) => (
 				<div className="col-lg-12 col-sm-12 col-xs-12" key={recipe.id}>
 					<div className="recipe">

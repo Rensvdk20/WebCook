@@ -1,0 +1,20 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "mysql"
+    url      = env("DB_CONN_URL")
+}
+
+model recipes {
+    id           Int      @id @default(autoincrement())
+    name         String   @db.VarChar(255)
+    description  String   @db.Text
+    ingredients  String   @db.Text
+    instructions String   @db.Text
+    participants Int
+    image        String   @db.VarChar(255)
+    created_at   DateTime @default(now()) @db.DateTime(0)
+    status       Boolean
+}

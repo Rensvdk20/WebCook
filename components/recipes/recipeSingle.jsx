@@ -2,7 +2,7 @@ import Image from "next/image";
 import { BsFillPersonFill } from "react-icons/bs";
 
 export default function recipe({ recipeData }) {
-	const recipe = recipeData.result;
+	const recipe = recipeData;
 
 	return (
 		<div className="recipe-single">

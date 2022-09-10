@@ -1,9 +1,9 @@
+import { PrismaClient } from "@prisma/client";
 import Head from "next/head";
-
 import RecipeSingle from "../../components/recipes/recipeSingle";
 
 export default function recipe({ recipeData }) {
-	const title = `WebCook | ${recipeData.result.name}`;
+	const title = `WebCook | ${recipeData.name}`;
 
 	return (
 		<>
@@ -18,12 +18,19 @@ export default function recipe({ recipeData }) {
 }
 
 export async function getStaticPaths() {
-	//Get all recipes
-	const res = await fetch(new URL(`/api/recipes`, process.env.BASE_URL));
-	const recipes = await res.json();
+	const prisma = new PrismaClient();
+	let allRecipes;
+
+	try {
+		allRecipes = JSON.parse(
+			JSON.stringify(await prisma.recipes.findMany())
+		);
+	} catch (e) {
+		console.log(e);
+	}
 
 	//Put all recipe ids in an array as string
-	const paths = recipes.results.map((recipeData) => ({
+	const paths = allRecipes.map((recipeData) => ({
 		params: { id: recipeData.id.toString() },
 	}));
 
@@ -32,20 +39,21 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+	const prisma = new PrismaClient();
+
 	try {
-		//Fetch the recipe by id
-		const res = await fetch(
-			new URL(`/api/recipes?id=${params.id}`, process.env.BASE_URL),
-			{
-				method: "GET",
-			}
+		const recipeData = JSON.parse(
+			JSON.stringify(
+				await prisma.recipes.findUnique({
+					where: {
+						id: parseInt(params.id),
+					},
+				})
+			)
 		);
 
-		const recipeData = await res.json();
-
-		// Pass data to the page via props
 		return { props: { recipeData } };
-	} catch (err) {
-		console.log(err);
+	} catch (e) {
+		console.log(e);
 	}
 }

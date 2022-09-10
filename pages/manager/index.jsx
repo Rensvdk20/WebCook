@@ -1,20 +1,18 @@
+import { PrismaClient } from "@prisma/client";
 import Head from "next/head";
 import RecipeManagerList from "../../components/manager/managerRecipeList";
 import RecipeManagerOverview from "../../components/manager/managerOverview";
 
 export async function getServerSideProps() {
+	const prisma = new PrismaClient();
+
 	try {
-		// Fetch data from external API
-		const res = await fetch(new URL("/api/recipes", process.env.BASE_URL), {
-			method: "GET",
-		});
-
-		const allRecipes = await res.json();
-
-		// Pass data to the page via props
+		const allRecipes = JSON.parse(
+			JSON.stringify(await prisma.recipes.findMany())
+		);
 		return { props: { allRecipes } };
-	} catch (err) {
-		console.log(err);
+	} catch (e) {
+		console.log(e);
 	}
 }
 

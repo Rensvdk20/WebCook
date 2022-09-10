@@ -40,10 +40,12 @@ export default function recipe({ recipeData }) {
 				</div>
 				<div className="recipe-block recipe-block-mid row">
 					<div className="col-lg-4 col-md-6 col-xs-12">
+						<hr />
 						<h4>Ingredients</h4>
 						<p>{recipe.ingredients}</p>
 					</div>
 					<div className="col-lg-8 col-md-6 col-xs-12">
+						<hr />
 						<h4>Instructions</h4>
 						<p>{recipe.instructions}</p>
 					</div>

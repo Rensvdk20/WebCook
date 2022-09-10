@@ -20,6 +20,12 @@
                     white-space: break-spaces;
                 }
             }
+
+            > div {
+                hr {
+                    display: none;
+                }
+            }
         }
 
         &-image {
@@ -36,5 +42,63 @@
                 padding-bottom: 2px;
             }
         }
+        
+        @media screen and (max-width: $md) {
+            &-block {
+                &-top {
+                    > div:first-child {
+                        padding: 0;
+                    }
+                }
+            }
+
+            &-image {
+                height: 100%;
+
+                img {
+                    border-bottom-left-radius: 0;
+                }
+
+                > span {
+                    height: 100% !important;
+                }
+            }
+        }
+
+        @media screen and (max-width: $sm) {
+            &-image {
+                img {
+                    border-top-right-radius: 10px;
+                }
+            }
+        }
+    
+        @media screen and (max-width: $xs) {
+            padding-top: 0;
+
+            &-block {
+                box-shadow: none;
+    
+                &-mid {
+                    padding: 0;
+                }
+
+                > div {
+                    hr {
+                        display: block;
+                    }
+                }
+
+                margin-bottom: 0;
+            }
+
+            &-image {
+                img {
+                    border-top-right-radius: 0;
+                    border-top-left-radius: 0;
+                }
+            }
+        }
     }
+
 }

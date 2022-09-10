@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+import prisma from "../../lib/prisma";
 import Head from "next/head";
 import RecipeSingle from "../../components/recipes/recipeSingle";
 
@@ -18,7 +18,6 @@ export default function recipe({ recipeData }) {
 }
 
 export async function getStaticPaths() {
-	const prisma = new PrismaClient();
 	let allRecipes;
 
 	try {
@@ -39,8 +38,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-	const prisma = new PrismaClient();
-
 	try {
 		const recipeData = JSON.parse(
 			JSON.stringify(

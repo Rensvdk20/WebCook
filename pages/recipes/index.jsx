@@ -1,10 +1,9 @@
-import { PrismaClient } from "@prisma/client";
+import prisma from "../../lib/prisma";
 import Head from "next/head";
 
 import RecipeList from "../../components/recipes/recipeList";
 
 export async function getServerSideProps() {
-	const prisma = new PrismaClient();
 	let allRecipes;
 
 	try {

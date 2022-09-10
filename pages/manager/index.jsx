@@ -1,11 +1,9 @@
-import { PrismaClient } from "@prisma/client";
 import Head from "next/head";
+import prisma from "../../lib/prisma";
 import RecipeManagerList from "../../components/manager/managerRecipeList";
 import RecipeManagerOverview from "../../components/manager/managerOverview";
 
 export async function getServerSideProps() {
-	const prisma = new PrismaClient();
-
 	try {
 		const allRecipes = JSON.parse(
 			JSON.stringify(await prisma.recipes.findMany())

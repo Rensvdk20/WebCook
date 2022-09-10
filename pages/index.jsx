@@ -12,17 +12,6 @@ export default function Home() {
 				/>
 			</Head>
 			<header></header>
-			<div>
-				<Image
-					priority
-					src="/images/svg/homepage_gradient.svg"
-					layout="responsive"
-					width={1920}
-					height={460.72}
-					objectFit="cover"
-					alt="homepage gradient"
-				/>
-			</div>
 			<footer></footer>
 		</>
 	);

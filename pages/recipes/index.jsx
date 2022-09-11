@@ -3,7 +3,7 @@ import Head from "next/head";
 
 import RecipeList from "../../components/recipes/recipeList";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	let allRecipes;
 
 	try {
@@ -14,7 +14,7 @@ export async function getServerSideProps() {
 		console.log(e);
 	}
 
-	return { props: { allRecipes } };
+	return { props: { allRecipes }, revalidate: 10 };
 }
 
 export default function Recipes({ allRecipes }) {
